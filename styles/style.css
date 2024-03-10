@@ -9,7 +9,11 @@ html {
 }
 
 .page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   inline-size: 1200px;
+  height: 100vh;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -37,7 +41,6 @@ ol {
 }
 
 .content {
-  margin: 133px 30px;
   max-width: 1140px;
   height: 534px;
   display: flex;
