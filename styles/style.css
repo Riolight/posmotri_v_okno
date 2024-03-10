@@ -42,7 +42,6 @@ ol {
 
 .content {
   max-width: 1140px;
-  height: 534px;
   display: flex;
   gap: 30px;
   justify-content: center;
@@ -81,7 +80,8 @@ ol {
   position: relative;
   max-width: 399px;
   max-height: 298px;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .content__list-item:not(:last-child) {
@@ -91,16 +91,13 @@ ol {
 .content__video-card {
   display: flex;
   justify-content: space-between;
-  max-height: 103px;
-}
-
-.content__video-card-description-container {
-  max-width: 200px;
 }
 
 .content__video-card-thumbnail {
   object-fit: cover;
+  object-position: center;
   max-width: 194px;
+  max-height: 103px;
 }
 
 .content__card-link {
@@ -124,18 +121,25 @@ ol {
   outline-offset: 0;
 }
 
+.content__card-link:active {
+  background-color: #545050; 
+}
+
 .content__card-link_current {
   background-color: #545050;
 }
 
 .content__video-card-title {
+  max-width: 200px;
   margin-bottom: 6px;
   font-family: Oswald, Arial, Helvetica, sans-serif;
   font-size: 30px;
   line-height: 30px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  word-wrap: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description {
@@ -179,7 +183,6 @@ input[type="text"] {
   color: inherit;
   font-size: inherit;
   line-height: 23.6px;
-  letter-spacing: -0.01em;
   background-color: transparent;
   border: none;
   width: 225px;
@@ -208,15 +211,15 @@ input[type="text"]:focus {
   gap: 15px;
 }
 
-.search-form__checkbox-list:hover {
-  text-decoration: underline;
-}
-
 .search-form__label {
   display: flex;
   align-items: center;
   gap: 5px;
   cursor: pointer;
+}
+
+.search-form__label-text:not(.search-form__label):hover {
+  text-decoration: underline;
 }
 
 .search-form__pseudo-checkbox {
@@ -235,7 +238,7 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 }
 
 .button {
-  border: 1px solid #fff;
+  border: 1px solid currentColor;
   background-color: transparent;
   color: #fff;
   font-family: inherit;
