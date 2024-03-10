@@ -47,17 +47,15 @@ ol {
   align-items: flex-end;
 }
 
-.result {
-  min-width: 711px;
-}
-
 .result__video-container {
   position: relative;
+  margin-bottom: 12px;
 }
 
 .result__video {
-  width: 100%;
-  height: 100%;
+  object-fit: cover;
+  width: 711px;
+  height: 386px;
 }
 
 .content__details {
